@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zexu Chen — Phase-Field, GPU & ML for Shape Memory Alloys</title>
+<meta name="description" content="PhD candidate in Materials Science and Engineering at The Ohio State University (Wang Group). Phase-field modeling of NiTi shape memory alloys, GPU-accelerated HPC, and Gaussian-Process / Bayesian surrogates for inverse alloy design." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Zexu Chen — Computational Materials Science" />
+<meta property="og:description" content="PhD candidate at OSU. NiTi phase-field, GPU/OpenACC, ML surrogates for alloy design." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts are configured in config.js (SITE.fonts) and injected by main.js -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Config + behavior (config first; both deferred so they run after parse) -->
+<script src="config.js" defer></script>
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- =========================================================== -->
+<!-- NAV (tabs)                                                   -->
+<!-- =========================================================== -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#about" class="brand">Zexu Chen</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <div class="nav-links" id="navlinks" role="tablist">
+      <a role="tab" href="#about"    aria-controls="about"    aria-selected="false" tabindex="-1">About</a>
+      <a role="tab" href="#research" aria-controls="research" aria-selected="false" tabindex="-1">Research</a>
+      <a role="tab" href="#cv"       aria-controls="cv"       aria-selected="false" tabindex="-1">CV / Resume</a>
+      <a role="tab" href="#contact"  aria-controls="contact"  aria-selected="false" tabindex="-1">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- =========================================================== -->
+  <!-- ABOUT (hero + bio + now sidebar)                             -->
+  <!-- =========================================================== -->
+  <section id="about" class="panel" role="tabpanel">
+
+    <div class="hero">
+      <svg class="phase-art" viewBox="0 0 500 500" aria-hidden="true">
+        <defs>
+          <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+            <path d="M 22 0 L 0 0 0 22" fill="none" stroke="#16140f" stroke-width="0.3"/>
+          </pattern>
+        </defs>
+        <rect width="500" height="500" fill="url(#grid)"/>
+        <g fill="none" stroke="#16140f" stroke-width="1.2">
+          <ellipse cx="250" cy="250" rx="190" ry="60" transform="rotate(20 250 250)"/>
+          <ellipse cx="250" cy="250" rx="190" ry="60" transform="rotate(-40 250 250)"/>
+          <ellipse cx="250" cy="250" rx="190" ry="60" transform="rotate(80 250 250)"/>
+          <ellipse cx="250" cy="250" rx="140" ry="42" transform="rotate(50 250 250)"/>
+          <ellipse cx="250" cy="250" rx="90" ry="28" transform="rotate(-15 250 250)"/>
+        </g>
+        <circle cx="250" cy="250" r="230" fill="none" stroke="#a83f2a" stroke-width="0.8" stroke-dasharray="2 4"/>
+      </svg>
+
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <h1>Zexu Chen</h1>
+          <p class="hero-tag">
+            I build <em>physics-grounded</em> and <em>data-driven</em> models of how
+            NiTi-based metals remember their shape — coupling phase-field theory,
+            GPU-accelerated computing, and Gaussian-process surrogates for inverse
+            alloy design. <span class="accent">/ Columbus, OH</span>
+          </p>
+        </div>
+        <div class="hero-photo">
+          <img data-img="avatar" alt="Portrait of Zexu Chen" width="180" height="180" />
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap about-grid">
+      <div>
+        <p>
+          I'm a PhD candidate in the <strong>Wang group</strong> at <strong>The Ohio State University</strong>
+          (expected May 2028), working on <em>phase-field</em> modeling of NiTi-based shape memory alloys.
+        </p>
+        <p>
+          My research spans three coupled layers: 3D GPU-accelerated multi-variant
+          Allen–Cahn / Cahn–Hilliard solvers in C / OpenACC on the Ohio Supercomputer Center;
+          microstructural engineering of NiTi via 1D nanoscale concentration modulations
+          and Ni₄Ti₃ precipitation; and <em>Gaussian Process Regression</em> surrogates
+          that map composition and microstructure to transformation temperature and
+          stress–strain response — closing the loop for inverse alloy design.
+        </p>
+        <p>
+          I'm seeking a <strong>Fall 2026 or Summer 2027 R&amp;D internship</strong> in
+          materials informatics, computational alloy design, or ML for materials — with a
+          longer-term interest in national-laboratory research roles.
+        </p>
+      </div>
+      <aside class="now" aria-label="Currently">
+        <div class="now-row">
+          <div class="now-label">Now</div>
+          <div class="now-val">Finalizing first-author manuscript on 1D nanoscale concentration modulations + GPR surrogate.</div>
+        </div>
+        <div class="now-row">
+          <div class="now-label">Recent</div>
+          <div class="now-val">Co-authored paper on confinement effects in NiTi published in <em>Shape Memory and Superelasticity</em> (2026).</div>
+        </div>
+        <div class="now-row">
+          <div class="now-label">Next</div>
+          <div class="now-val">Fall 2026 / Summer 2027 R&amp;D internship · materials informatics / computational alloy design.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- RESEARCH (projects + publications)                           -->
+  <!-- =========================================================== -->
+  <section id="research" class="panel" role="tabpanel">
+    <div class="wrap">
+
+      <h3 class="subhead">Projects</h3>
+      <div class="projects">
+
+        <article class="project featured">
+          <div>
+            <div class="project-num">01 / Lead — In Preparation</div>
+            <h3>Regulating Mechanical Behavior of NiTi SMA via 1D Nanoscale Concentration Modulations</h3>
+            <p>
+              3D phase-field simulations of nanoscale composition waves engineered to produce
+              a near-linear superelastic stress–strain response in NiTi — targeting biomedical
+              and actuator applications. Habit-plane and twinning-plane formation in B19′
+              martensite analyzed through martensite crystallography and Khachaturyan
+              microelasticity. A <em>Gaussian Process Regression</em> surrogate maps modulation
+              parameters to stress–strain behavior, enabling accelerated inverse design.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Phase-field</span>
+              <span class="tag">C · OpenACC</span>
+              <span class="tag">Khachaturyan microelasticity</span>
+              <span class="tag">GPR surrogate</span>
+              <span class="tag">Inverse design</span>
+            </div>
+          </div>
+          <div class="featured-vis">
+            <img data-img="projectModulation" alt="3D phase-field simulation of multi-variant martensite microstructure in polycrystalline NiTi" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img data-img="projectConfinement" alt="Phase-field results for soft and hard confinement effects on NiTi martensitic transformation" loading="lazy" />
+          </div>
+          <div class="project-num">02 / Published 2026</div>
+          <h3>Soft &amp; Hard Confinement Effects on Martensitic Transformation in NiTi</h3>
+          <p>
+            Phase-field study of how amorphous-matrix (soft) and crystalline-matrix (hard)
+            confinement modulate the B2 → B19′ transformation in NiTi shape memory alloys.
+            Demonstrated linear superelastic response routes via amorphous–crystalline
+            composite microstructures. Published in <em>Shape Memory and Superelasticity</em>
+            (2026) with Sriram, Feng &amp; Wang.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Multi-phase field</span>
+            <span class="tag">B2 → B19′</span>
+            <span class="tag">Composite microstructure</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img data-img="projectNi4Ti3" alt="Phase-field simulation of Ni₄Ti₃ precipitate microstructures at 1 nm and 5 nm scales" loading="lazy" />
+          </div>
+          <div class="project-num">03</div>
+          <h3>Taming Martensitic Transformation via Dissolution of Ni₄Ti₃ Precipitates</h3>
+          <p>
+            Coupled Cahn–Hilliard and time-dependent Ginzburg–Landau evolution with an
+            explicit nucleation algorithm to model Ni₄Ti₃ precipitation and its dissolution-induced
+            concentration field. Quantified the effect on transformation hysteresis and mechanical
+            stability — producing parameter guidelines for collaborating experimentalists.
+            Implemented in C with OpenACC and run as large parametric SLURM campaigns on OSC.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Ni₄Ti₃</span>
+            <span class="tag">Cahn–Hilliard + TDGL</span>
+            <span class="tag">GPU / OpenACC</span>
+            <span class="tag">SLURM</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img data-img="projectSuperML" alt="Predicted vs. actual electron-phonon coupling λ across 50/200-bin and physics-informed feature sets" loading="lazy" />
+          </div>
+          <div class="project-num">04</div>
+          <h3>Predicting Superconducting λ and T<sub>c</sub> from Eliashberg Spectra</h3>
+          <p>
+            XGBoost and Gaussian Process Regression pipeline predicting λ and T<sub>c</sub>
+            from α²F(ω) Eliashberg spectral functions on the Gibson et&nbsp;al. (2026, <em>npj
+            Comput. Mater.</em>) dataset of 806 DFT-validated superconductors. Physics-informed
+            frequency-weighted α²F/ω features aligned with the Eliashberg integral; Matérn
+            (ν = 1.5, 2.5) + White kernels tuned for spectral discontinuities. Benchmarked
+            50 / 200 / 800-bin resolution against generalization, identifying physics-informed
+            binning as a more robust route than naïve high-resolution sampling.
+          </p>
+          <div class="project-tags">
+            <span class="tag">XGBoost · GPR</span>
+            <span class="tag">Matérn kernels</span>
+            <span class="tag">Eliashberg α²F</span>
+            <span class="tag">Feature engineering</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-thumb">
+            <img data-img="projectAgentMCP" alt="Workflow of an MLLM agent connected through an MCP server for semantic microstructure analysis" loading="lazy" />
+          </div>
+          <div class="project-num">05 / Concept — In Progress</div>
+          <h3>Agentic AI &amp; MCP for Semantic Microstructure Analysis</h3>
+          <p>
+            A researcher-in-the-loop pipeline where a multimodal LLM agent, connected through a
+            <em>Model Context Protocol</em> (MCP) server, turns high-level semantic goals
+            (e.g., &ldquo;find voids under 1&nbsp;nm&rdquo;) into concrete operations — object
+            segmentation, feature extraction, and proximity filtering — over simulation and CT
+            microstructure data. The agent plans, translates intent into logical rules and
+            parameters, validates results against the original goal, and iteratively refines,
+            returning visual reports and segmentation maps.
+          </p>
+          <div class="project-tags">
+            <span class="tag">MLLM agent</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Microstructure analysis</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">Human-in-the-loop</span>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="subhead with-gap">Publications</h3>
+      <ol class="pub-list">
+
+        <li>
+          <div>
+            <span class="pub-title">Regulating Mechanical Behavior of NiTi Shape Memory Alloys via 1D Nanoscale Concentration Modulations: Phase-Field Study and Gaussian Process Regression Surrogate</span>
+            <div class="pub-authors"><b>Chen Z.</b>, Wang Y.</div>
+            <div class="pub-venue">Manuscript in preparation · Target submission 2026</div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <span class="pub-title">Soft and Hard Confinement Effects on Martensitic Transformation in NiTi Shape Memory Alloys: Insights from Phase-Field Simulations</span>
+            <div class="pub-authors">Sriram H., Feng L., <b>Chen Z.</b>, Wang Y.</div>
+            <div class="pub-venue"><em>Shape Memory and Superelasticity</em> · 2026</div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1007/s40830-026-00619-3" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <span class="pub-title">Effect of Crystallite Size on the Low-Temperature Solid-Solid Phase Transformations in the WO₃ System</span>
+            <div class="pub-authors">Abe O., Qiu Z., <b>Chen Z.</b>, Jinschek J.R., Gouma P.-I.</div>
+            <div class="pub-venue"><em>Ceramics International</em> · 2021</div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.ceramint.2021.08.254" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- CV (education + teaching + methods + download)               -->
+  <!-- =========================================================== -->
+  <section id="cv" class="panel" role="tabpanel">
+    <div class="wrap">
+
+      <div class="cv-grid">
+        <div>
+          <h3 class="subhead">Education</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-date">2024—2028</div>
+              <div class="tl-body">
+                <h4>Ph.D., Materials Science &amp; Engineering</h4>
+                <div class="where">The Ohio State University · Wang Group</div>
+                <div class="detail">Advisor: Prof. Yunzhi Wang. Phase-field modeling of NiTi shape memory alloys, GPU/HPC, and ML surrogates for inverse alloy design.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2022—2024</div>
+              <div class="tl-body">
+                <h4>M.S., Materials Science &amp; Engineering</h4>
+                <div class="where">The Ohio State University</div>
+                <div class="detail">Coursework: Structure &amp; Defects in Materials · Diffusion &amp; Interface Kinetics · Thermodynamics of Materials.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2017—2022</div>
+              <div class="tl-body">
+                <h4>B.Sc., Materials Science &amp; Engineering</h4>
+                <div class="where">Sichuan University / The Ohio State University</div>
+                <div class="detail">Joint undergraduate program.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="subhead">Teaching &amp; Conferences</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-date">Mar 2026</div>
+              <div class="tl-body">
+                <h4>TMS 2026 — Poster</h4>
+                <div class="where">TMS Annual Meeting</div>
+                <div class="detail">Soft and Hard Confinement on NiTi B19′ — Insight from Phase Field Modeling.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Oct 2025</div>
+              <div class="tl-body">
+                <h4>MS&amp;T 2025 — Oral</h4>
+                <div class="where">Materials Science &amp; Technology</div>
+                <div class="detail">Regulating Martensitic Transformation in NiTi via Microstructural Engineering.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Mar 2025</div>
+              <div class="tl-body">
+                <h4>TMS 2025 — Poster</h4>
+                <div class="where">TMS Annual Meeting</div>
+                <div class="detail">Regulating Stress–Strain Behavior of NiTi SMA via 1D Nanoscale Concentration Modulations.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2023—2024</div>
+              <div class="tl-body">
+                <h4>Graduate Teaching Assistant</h4>
+                <div class="where">The Ohio State University</div>
+                <div class="detail">Introduction to Engineering Materials &amp; Modeling and Simulation Lab II. ~40 students per course; recitations, office hours, grading.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Oct 2023</div>
+              <div class="tl-body">
+                <h4>MS&amp;T 2023 — Oral</h4>
+                <div class="where">Materials Science &amp; Technology</div>
+                <div class="detail">Fine-tuning Superelastic Behavior of NiTi SMAs via Nanoscale Concentration Modulations.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead with-gap">Methods</h3>
+      <div class="skill-grid">
+        <div class="skill-col">
+          <h4>Simulation</h4>
+          <ul>
+            <li>Phase-field (Allen–Cahn, Cahn–Hilliard, multiphase-field)</li>
+            <li>Khachaturyan microelasticity</li>
+            <li>CALPHAD thermodynamics</li>
+            <li>Molecular Dynamics · LAMMPS</li>
+            <li>COMSOL · Kinetic Monte Carlo</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>HPC &amp; Code</h4>
+          <ul>
+            <li>C · Python · MATLAB · Fortran · Bash</li>
+            <li>OpenACC · CUDA</li>
+            <li>SLURM · Linux · Git</li>
+            <li>Ohio Supercomputer Center</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Machine Learning</h4>
+          <ul>
+            <li>Gaussian Process Regression</li>
+            <li>Bayesian optimization</li>
+            <li>LASSO &amp; sparse regression</li>
+            <li>XGBoost</li>
+            <li>PyTorch · scikit-learn · PINNs</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Materials &amp; Data</h4>
+          <ul>
+            <li>NiTi shape memory alloys</li>
+            <li>Martensitic transformation · ICME</li>
+            <li>Materials informatics</li>
+            <li>ParaView · OVITO · PyVista</li>
+            <li>JupyterLab · MATLAB plotting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-downloads">
+        <a class="cv-download" data-link="cv" download>Download CV (PDF)</a>
+        <a class="cv-download" data-link="resume" download>Download Resume (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== -->
+  <!-- CONTACT                                                      -->
+  <!-- =========================================================== -->
+  <section id="contact" class="panel" role="tabpanel">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="contact-lead">Get in touch.</h2>
+        <p class="contact-note">
+          Open to Fall 2026 / Summer 2027 R&amp;D internships and research collaborations in
+          materials informatics, computational alloy design, and ML for materials.
+        </p>
+        <a class="email-link" data-link="email"></a>
+      </div>
+      <nav class="social" aria-label="Elsewhere">
+        <a data-link="orcid"    target="_blank" rel="noopener">ORCID</a>
+        <a data-link="scopus"   target="_blank" rel="noopener">Scopus</a>
+        <a data-link="scholar"  target="_blank" rel="noopener">Google Scholar</a>
+        <a data-link="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-link="github"   target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>© <span id="yr"></span> Zexu Chen · Columbus, Ohio</span>
+  <span>Static site · HTML · CSS · JS</span>
+</footer>
+
+</body>
+</html>
