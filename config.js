@@ -38,6 +38,7 @@ window.SITE = {
   /* ---- Links (keys match data-link="..." in index.html) -------------- */
   links: {
     email:    "chenzxjeremy@gmail.com",
+    email2:   "chenzxjeremy@163.com",
     orcid:    "https://orcid.org/0000-0002-8280-201X",
     scopus:   "https://www.scopus.com/inward/authorDetails.url?authorID=57253838400&partnerID=MN8TOARS",
     scholar:  "https://scholar.google.com/citations?hl=en&user=aPyzF-wAAAAJ",
