@@ -607,7 +607,8 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   max-width: 42ch;
 }
 .email-link {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 0.25rem;
   font-family: var(--sans);
   font-weight: 500;

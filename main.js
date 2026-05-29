@@ -32,7 +32,7 @@
     var key = el.getAttribute("data-link");
     var val = links[key];
     if (!val) return;
-    if (key === "email") {
+    if (key.indexOf("email") === 0) {
       el.href = "mailto:" + val;
       if (!el.textContent.trim()) el.textContent = val;
     } else {
