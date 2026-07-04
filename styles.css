@@ -186,6 +186,8 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   border-bottom: 1px solid var(--rule);
 }
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 2.5rem);
