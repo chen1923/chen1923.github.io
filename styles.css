@@ -258,14 +258,33 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 }
 
 /* ---------- About ---------- */
+.about-bio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+@media (min-width: 760px) {
+  .about-bio {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+    align-items: center;
+  }
+  /* Cap the figure so it tracks the height of the prose beside it */
+  .about-fig img { max-height: 22rem; object-fit: contain; }
+}
+.about-fig { margin: 0; }
+.about-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .about-bio p {
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.65;
   color: var(--ink-soft);
   margin: 0 0 0.9rem;
-  max-width: 65ch;
 }
+.about-bio p:last-child { margin-bottom: 0; }
 .about-bio p em { font-style: normal; color: var(--accent); font-weight: 600; }
 .about-bio strong { font-weight: 600; color: var(--ink); }
 

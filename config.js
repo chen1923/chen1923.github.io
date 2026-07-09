@@ -28,6 +28,7 @@ window.SITE = {
   /* ---- Images (keys match data-img="..." in index.html) -------------- */
   images: {
     avatar:             "fig/avatar.png",          // hero portrait
+    aboutPoly:          "fig/polycrystal-niti.png", // about — polycrystalline NiTi microstructure
     projectModulation:  "fig/mt_poly.png",         // 01 — 1D nanoscale concentration modulations
     projectConfinement: "fig/soft_hard.png",       // 02 — soft & hard confinement
     projectNi4Ti3:      "fig/ppt.jpeg",            // 03 — Ni4Ti3 precipitation / dissolution

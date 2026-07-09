@@ -83,30 +83,34 @@
 
     <div class="wrap">
       <div class="about-bio">
-        <p>
-          I'm a PhD candidate in the <strong>Wang group</strong> at <strong>The Ohio State University</strong>
-          (expected May 2028), working on <em>phase-field</em> modeling of NiTi-based shape memory alloys.
-        </p>
-        <p>
-          My research spans three coupled layers: 3D GPU-accelerated multi-variant
-          Allen–Cahn / Cahn–Hilliard solvers in C / OpenACC on the Ohio Supercomputer Center;
-          microstructural engineering of NiTi via 1D nanoscale concentration modulations
-          and Ni₄Ti₃ precipitation; and <em>Gaussian Process Regression</em> surrogates
-          that map composition and microstructure to transformation temperature and
-          stress–strain response — closing the loop for inverse alloy design.
-        </p>
-        <p>
-          I'm seeking a <strong>Summer 2027 R&amp;D internship</strong> in
-          materials informatics, computational alloy design, or ML for materials — with a
-          longer-term interest in national-laboratory research roles.
-        </p>
+        <figure class="about-fig">
+          <img data-img="aboutPoly" alt="Phase-field simulation of martensite microstructure in polycrystalline NiTi" width="1200" height="1153" />
+        </figure>
+        <div class="about-prose">
+          <p>
+            I'm a PhD candidate in the <strong>Wang group</strong> at <strong>The Ohio State University</strong>
+            (expected May 2028), working on <em>phase-field</em> modeling of NiTi-based shape memory alloys.
+          </p>
+          <p>
+            My research spans three coupled layers: GPU-accelerated phase-field solvers
+            written in C / OpenACC and run on the Ohio Supercomputer Center; microstructural
+            engineering of NiTi at the nanoscale; and <em>machine-learning surrogates</em>
+            that link composition and microstructure to mechanical response — closing the
+            loop for inverse alloy design.
+          </p>
+          <p>
+            I'm seeking a <strong>Summer 2027 R&amp;D internship</strong> in
+            materials informatics, computational alloy design, or ML for materials — with a
+            longer-term interest in national-laboratory research roles.
+          </p>
+        </div>
       </div>
       <section class="now" aria-label="Current focus">
         <div class="now-col">
           <h3 class="now-label">Now</h3>
           <ul class="now-list">
-            <li>Developing polycrystalline NiTi phase-field models with grain-boundary effects and martensite variant selection.</li>
-            <li>Building GPR, Bayesian-optimization, XGBoost and CNN surrogates for inverse design of composition-modulated NiTi.</li>
+            <li>Extending my phase-field framework from single crystals to polycrystalline NiTi.</li>
+            <li>Building Gaussian-process, Bayesian-optimization, XGBoost and CNN surrogates for inverse alloy design.</li>
             <li>Running large GPU simulation campaigns on OSC's Cardinal cluster.</li>
             <li>Seeking a Summer 2027 internship in materials informatics / ICME.</li>
           </ul>
@@ -124,7 +128,7 @@
         <div class="now-col">
           <h3 class="now-label">Next</h3>
           <ul class="now-list">
-            <li>Finishing my composition-modulation NiTi manuscript.</li>
+            <li>Finishing my first-author NiTi manuscript.</li>
             <li>Carrying the polycrystalline simulation work through to my dissertation.</li>
             <li>Graduating in May 2028.</li>
             <li>Moving toward a career in materials informatics / ICME.</li>
@@ -149,22 +153,22 @@
             <h3>Regulating Mechanical Behavior of NiTi SMA via 1D Nanoscale Concentration Modulations</h3>
             <p>
               3D phase-field study of how nanoscale composition waves influence the
-              superelastic stress–strain response of NiTi — with relevance to biomedical
-              and actuator applications. Habit-plane and twinning-plane formation in B19′
-              martensite is analyzed through martensite crystallography and Khachaturyan
-              microelasticity. A <em>Gaussian Process Regression</em> surrogate links modulation
-              parameters to mechanical response to support accelerated inverse design.
+              superelastic response of NiTi — with relevance to biomedical and actuator
+              applications. Martensite microstructure and its mechanical response are
+              analyzed within a micromechanical framework, and a <em>machine-learning
+              surrogate</em> links processing parameters to response to support accelerated
+              inverse design.
             </p>
             <div class="project-tags">
               <span class="tag">Phase-field</span>
               <span class="tag">C · OpenACC</span>
-              <span class="tag">Khachaturyan microelasticity</span>
-              <span class="tag">GPR surrogate</span>
+              <span class="tag">Micromechanics</span>
+              <span class="tag">ML surrogate</span>
               <span class="tag">Inverse design</span>
             </div>
           </div>
           <div class="featured-vis">
-            <img data-img="projectModulation" alt="3D phase-field simulation of multi-variant martensite microstructure in polycrystalline NiTi" loading="lazy" />
+            <img data-img="projectModulation" alt="3D phase-field simulation of martensite microstructure in NiTi" loading="lazy" />
           </div>
         </article>
 
@@ -190,20 +194,20 @@
 
         <article class="project">
           <div class="project-thumb">
-            <img data-img="projectNi4Ti3" alt="Phase-field simulation of Ni₄Ti₃ precipitate microstructures at 1 nm and 5 nm scales" loading="lazy" />
+            <img data-img="projectNi4Ti3" alt="Phase-field simulation of precipitate microstructures in NiTi" loading="lazy" />
           </div>
           <div class="project-num">03</div>
-          <h3>Taming Martensitic Transformation via Dissolution of Ni₄Ti₃ Precipitates</h3>
+          <h3>Taming Martensitic Transformation via Precipitate Engineering</h3>
           <p>
-            Coupled Cahn–Hilliard and time-dependent Ginzburg–Landau evolution with an
-            explicit nucleation algorithm to model Ni₄Ti₃ precipitation and its dissolution-induced
-            concentration field. Explores the effect on transformation hysteresis and mechanical
-            stability in collaboration with experimentalists.
+            Coupled diffusional and non-diffusional phase-field evolution with an explicit
+            nucleation algorithm, used to model precipitation in NiTi and the concentration
+            field it leaves behind. Explores the resulting effect on transformation behavior
+            and mechanical stability.
             Implemented in C with OpenACC and run as large parametric SLURM campaigns on OSC.
           </p>
           <div class="project-tags">
-            <span class="tag">Ni₄Ti₃</span>
-            <span class="tag">Cahn–Hilliard + TDGL</span>
+            <span class="tag">Precipitation</span>
+            <span class="tag">Phase-field</span>
             <span class="tag">GPU / OpenACC</span>
             <span class="tag">SLURM</span>
           </div>
@@ -211,22 +215,21 @@
 
         <article class="project">
           <div class="project-thumb">
-            <img data-img="projectSuperML" alt="Predicted vs. actual electron-phonon coupling λ across 50/200-bin and physics-informed feature sets" loading="lazy" />
+            <img data-img="projectSuperML" alt="Predicted versus actual electron-phonon coupling across feature sets" loading="lazy" />
           </div>
           <div class="project-num">04</div>
           <h3>Predicting Superconducting λ and T<sub>c</sub> from Eliashberg Spectra</h3>
           <p>
             XGBoost and Gaussian Process Regression pipeline predicting λ and T<sub>c</sub>
-            from α²F(ω) Eliashberg spectral functions on the Gibson et&nbsp;al. (2026, <em>npj
-            Comput. Mater.</em>) dataset of 806 DFT-validated superconductors. Physics-informed
-            frequency-weighted α²F/ω features aligned with the Eliashberg integral; Matérn
-            (ν = 1.5, 2.5) + White kernels tuned for spectral discontinuities. Benchmarked
-            50 / 200 / 800-bin resolution against generalization, identifying physics-informed
-            binning as a more robust route than naïve high-resolution sampling.
+            from α²F(ω) Eliashberg spectral functions, trained on a public dataset of
+            DFT-validated superconductors. Physics-informed, frequency-weighted spectral
+            features are aligned with the Eliashberg integral, with kernels chosen to handle
+            spectral discontinuities. Benchmarks weigh feature resolution against
+            generalization.
           </p>
           <div class="project-tags">
             <span class="tag">XGBoost · GPR</span>
-            <span class="tag">Matérn kernels</span>
+            <span class="tag">Kernel design</span>
             <span class="tag">Eliashberg α²F</span>
             <span class="tag">Feature engineering</span>
           </div>
@@ -234,18 +237,17 @@
 
         <article class="project">
           <div class="project-thumb">
-            <img data-img="projectAgentMCP" alt="Workflow of an MLLM agent connected through an MCP server for semantic microstructure analysis" loading="lazy" />
+            <img data-img="projectAgentMCP" alt="Workflow of an LLM agent connected through an MCP server for microstructure analysis" loading="lazy" />
           </div>
           <div class="project-num">05 / Concept — In Progress</div>
           <h3>Agentic AI &amp; MCP for Semantic Microstructure Analysis</h3>
           <p>
             A researcher-in-the-loop pipeline where a multimodal LLM agent, connected through a
-            <em>Model Context Protocol</em> (MCP) server, turns high-level semantic goals
-            (e.g., &ldquo;find voids under 1&nbsp;nm&rdquo;) into concrete operations — object
-            segmentation, feature extraction, and proximity filtering — over simulation and CT
-            microstructure data. The agent plans, translates intent into logical rules and
-            parameters, validates results against the original goal, and iteratively refines,
-            returning visual reports and segmentation maps.
+            <em>Model Context Protocol</em> (MCP) server, turns high-level semantic goals into
+            concrete operations — segmentation, feature extraction, and filtering — over
+            simulation and microscopy data. The agent plans, translates intent into logical
+            rules and parameters, validates results against the original goal, and iteratively
+            refines, returning visual reports and segmentation maps.
           </p>
           <div class="project-tags">
             <span class="tag">MLLM agent</span>
