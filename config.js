@@ -29,11 +29,12 @@ window.SITE = {
   images: {
     avatar:             "fig/avatar.png",          // hero portrait
     aboutPoly:          "fig/polycrystal-niti.png", // about — polycrystalline NiTi microstructure
-    projectModulation:  "fig/mt_poly.png",         // 01 — 1D nanoscale concentration modulations
-    projectConfinement: "fig/soft_hard.png",       // 02 — soft & hard confinement
-    projectNi4Ti3:      "fig/ppt.jpeg",            // 03 — Ni4Ti3 precipitation / dissolution
-    projectSuperML:     "fig/superconduct_ml.png", // 04 — superconducting ML
-    projectAgentMCP:    "fig/mcp_visual.png",      // 05 — agentic AI + MCP
+    // HIDDEN UNTIL PUBLICATION — restore alongside the commented-out project 01 in index.html:
+    // projectModulation:  "fig/mt_poly.png",      // 1D nanoscale concentration modulations
+    projectConfinement: "fig/soft_hard.png",       // 01 — soft & hard confinement
+    projectNi4Ti3:      "fig/ppt.jpeg",            // 02 — Ni4Ti3 precipitation / dissolution
+    projectSuperML:     "fig/superconduct_ml.png", // 03 — superconducting ML
+    projectAgentMCP:    "fig/mcp_visual.png",      // 04 — agentic AI + MCP
   },
 
   /* ---- Links (keys match data-link="..." in index.html) -------------- */
