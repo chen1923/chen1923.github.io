@@ -29,7 +29,7 @@ window.SITE = {
   images: {
     avatar:             "fig/avatar.png",          // hero portrait
     aboutPoly:          "fig/polycrystal-niti.png", // about — polycrystalline NiTi microstructure
-    projectModulation:  "fig/mt_poly.png",         // 01 — 1D nanoscale concentration modulations
+    projectModulation:  "fig/1dcm.png",            // 01 — 1D nanoscale concentration modulations
     projectConfinement: "fig/soft_hard.png",       // 02 — soft & hard confinement
     projectNi4Ti3:      "fig/ppt.jpeg",            // 03 — Ni4Ti3 precipitation / dissolution
     projectSuperML:     "fig/superconduct_ml.png", // 04 — superconducting ML

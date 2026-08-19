@@ -426,8 +426,16 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   padding: 1.5rem;
 }
 @media (min-width: 760px) {
-  .project.featured { grid-template-columns: 1.3fr 1fr; }
+  .project.featured { grid-template-columns: 1fr 1fr; }
 }
+/* Text column: centre against the figure, which is now the taller item */
+.project.featured > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.project.featured > div:first-child p { flex: 0 1 auto; }
 .project.featured .project-num { color: var(--accent-dim); }
 .project.featured h3 { color: var(--paper); font-size: 1.2rem; }
 .project.featured p { color: color-mix(in srgb, var(--paper) 80%, transparent); }
@@ -447,7 +455,8 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .featured-vis img {
   width: 100%;
   height: auto;
-  max-height: 240px;
+  /* No height cap: the figure is multi-panel, so it needs the full column
+     width to stay legible. object-fit: contain never crops. */
   object-fit: contain;
   border-radius: 6px;
   background: color-mix(in srgb, var(--paper) 96%, transparent);
