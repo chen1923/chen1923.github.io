@@ -334,15 +334,16 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 }
 
 /* ---------- Work / Projects ---------- */
+/* Masonry: fixed-width columns, cards keep their natural height. CSS multicol
+   rather than grid, so cards pack against each other instead of aligning to
+   shared rows. Note this fills column-major — the browser balances the two
+   column heights, so 01-05 read down the left column, then the right. */
 .projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  columns: 1;
+  column-gap: clamp(1rem, 2vw, 1.5rem);
 }
 @media (min-width: 760px) {
-  /* Equal rows so every card is exactly the same size, whichever internal
-     layout it uses. */
-  .projects { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; }
+  .projects { columns: 2; }
 }
 .project {
   position: relative;
@@ -352,6 +353,9 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;   /* older Safari */
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .2s, box-shadow .2s;
 }
 .project:hover {
@@ -381,60 +385,21 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   line-height: 1.55;
 }
 
-/* Project thumbnail — bleeds to card edges */
+/* Project thumbnail — bleeds to card edges, natural aspect ratio.
+   No height cap: the figure gets the full card width, and the card grows to
+   fit it. This is what makes the near-square figures legible. */
 .project-thumb {
   margin: -1.25rem -1.25rem 0;
-  height: 190px;
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
   overflow: hidden;
 }
 .project-thumb img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Split card — figure beside the text instead of above it.
-   Only for near-square figures: a 130-190px tall strip wastes most of their
-   area, whereas a full-height column beside the text roughly doubles it.
-   Wide figures stay in the default layout, where they already fill the strip.
-   Card size is unchanged either way — same grid cell, same row height. */
-@media (min-width: 760px) {
-  .project.split {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    grid-template-rows: auto auto 1fr auto;   /* num, h3, p, tags */
-    column-gap: 1.15rem;
-    row-gap: 0.7rem;
-  }
-  .project.split > :not(.project-thumb) { grid-column: 2; }
-  .project.split .project-thumb {
-    grid-column: 1;
-    grid-row: 1 / -1;
-    height: auto;
-    margin: -1.25rem 0 -1.25rem -1.25rem;   /* bleed to top, left, bottom */
-    padding: 0;
-    position: relative;
-    border-bottom: none;
-    border-right: 1px solid var(--rule);
-  }
-  /* Absolutely positioned so the figure resolves against the panel's laid-out
-     height; object-fit: contain letterboxes it, so it never crops. */
-  .project.split .project-thumb img {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.6rem;
-    width: calc(100% - 1.2rem);
-    height: calc(100% - 1.2rem);
-    object-fit: contain;
-  }
-}
 .project-tags {
   display: flex;
   flex-wrap: wrap;
