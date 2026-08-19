@@ -94,9 +94,9 @@
           <p>
             My research spans three coupled layers: GPU-accelerated phase-field solvers
             written in C / OpenACC and run on the Ohio Supercomputer Center; microstructural
-            engineering of NiTi at the nanoscale; and <em>machine-learning surrogates</em>
-            that link composition and microstructure to mechanical response — closing the
-            loop for inverse alloy design.
+            engineering of NiTi via 1D nanoscale concentration modulations; and
+            <em>machine-learning surrogates</em> that link composition and microstructure to
+            mechanical response — closing the loop for inverse alloy design.
           </p>
           <p>
             I'm seeking a <strong>Summer 2027 R&amp;D internship</strong> in
@@ -118,6 +118,7 @@
         <div class="now-col">
           <h3 class="now-label">Recent</h3>
           <ul class="now-list">
+            <li>Posted a preprint of my first-author NiTi manuscript; now under review.</li>
             <li>Became a peer reviewer for <em>Metallurgical and Materials Transactions A</em> and <em>Shape Memory and Superelasticity</em>.</li>
             <li>Co-authored a paper on confinement effects on martensitic transformation in <em>Shape Memory and Superelasticity</em> (May 2026).</li>
             <li>Submitted two abstracts to TMS 2027.</li>
@@ -128,7 +129,7 @@
         <div class="now-col">
           <h3 class="now-label">Next</h3>
           <ul class="now-list">
-            <li>Finishing my first-author NiTi manuscript.</li>
+            <li>Growing the ML surrogate for inverse design into a standalone study.</li>
             <li>Carrying the polycrystalline simulation work through to my dissertation.</li>
             <li>Graduating in May 2028.</li>
             <li>Moving toward a career in materials informatics / ICME.</li>
@@ -147,23 +148,17 @@
       <h3 class="subhead">Projects</h3>
       <div class="projects">
 
-        <!-- HIDDEN UNTIL PUBLICATION — 1D concentration modulation work.
-             To restore: uncomment the featured article below, and renumber the
-             following projects back to 02 / 03 / 04 / 05.
-             Also restore the matching publication entry, the two conference
-             entries, and the projectModulation image key in config.js.
-
         <article class="project featured">
           <div>
-            <div class="project-num">01 / Lead — In Preparation</div>
-            <h3>Regulating Mechanical Behavior of NiTi SMA via 1D Nanoscale Concentration Modulations</h3>
+            <div class="project-num">01 / Lead — Preprint · Under review</div>
+            <h3>Programming Mechanical Response of NiTi SMA via 1D Nanoscale Concentration Modulations</h3>
             <p>
-              3D phase-field study of how nanoscale composition waves influence the
-              superelastic response of NiTi — with relevance to biomedical and actuator
-              applications. Martensite microstructure and its mechanical response are
-              analyzed within a micromechanical framework, and a <em>machine-learning
-              surrogate</em> links processing parameters to response to support accelerated
-              inverse design.
+              3D phase-field simulations of nanoscale composition waves engineered to produce
+              a near-linear superelastic stress–strain response in NiTi — targeting biomedical
+              and actuator applications. Habit-plane and twinning-plane formation in B19′
+              martensite analyzed through martensite crystallography and Khachaturyan
+              microelasticity. A <em>Gaussian Process Regression</em> surrogate maps modulation
+              parameters to stress–strain behavior, enabling accelerated inverse design.
             </p>
             <div class="project-tags">
               <span class="tag">Phase-field</span>
@@ -177,13 +172,12 @@
             <img data-img="projectModulation" alt="3D phase-field simulation of martensite microstructure in NiTi" loading="lazy" />
           </div>
         </article>
-        -->
 
         <article class="project">
           <div class="project-thumb">
             <img data-img="projectConfinement" alt="Phase-field results for soft and hard confinement effects on NiTi martensitic transformation" loading="lazy" />
           </div>
-          <div class="project-num">01 / Published 2026</div>
+          <div class="project-num">02 / Published 2026</div>
           <h3>Soft &amp; Hard Confinement Effects on Martensitic Transformation in NiTi</h3>
           <p>
             Phase-field study of how amorphous-matrix (soft) and crystalline-matrix (hard)
@@ -203,7 +197,7 @@
           <div class="project-thumb">
             <img data-img="projectNi4Ti3" alt="Phase-field simulation of precipitate microstructures in NiTi" loading="lazy" />
           </div>
-          <div class="project-num">02</div>
+          <div class="project-num">03</div>
           <h3>Taming Martensitic Transformation via Precipitate Engineering</h3>
           <p>
             Coupled diffusional and non-diffusional phase-field evolution with an explicit
@@ -224,7 +218,7 @@
           <div class="project-thumb">
             <img data-img="projectSuperML" alt="Predicted versus actual electron-phonon coupling across feature sets" loading="lazy" />
           </div>
-          <div class="project-num">03</div>
+          <div class="project-num">04</div>
           <h3>Predicting Superconducting λ and T<sub>c</sub> from Eliashberg Spectra</h3>
           <p>
             XGBoost and Gaussian Process Regression pipeline predicting λ and T<sub>c</sub>
@@ -246,7 +240,7 @@
           <div class="project-thumb">
             <img data-img="projectAgentMCP" alt="Workflow of an LLM agent connected through an MCP server for microstructure analysis" loading="lazy" />
           </div>
-          <div class="project-num">04 / Concept — In Progress</div>
+          <div class="project-num">05 / Concept — In Progress</div>
           <h3>Agentic AI &amp; MCP for Semantic Microstructure Analysis</h3>
           <p>
             A researcher-in-the-loop pipeline where a multimodal LLM agent, connected through a
@@ -270,16 +264,16 @@
       <h3 class="subhead with-gap">Publications</h3>
       <ol class="pub-list">
 
-        <!-- HIDDEN UNTIL PUBLICATION — 1D concentration modulation manuscript.
-
         <li>
           <div>
-            <span class="pub-title">Programming Mechanical Response of NiTi Shape Memory Alloys via One-Dimensional Compositional Modulations</span>
-            <div class="pub-authors"><b>Chen Z.</b>, Sriram H., Feng L., Yu T., Zhu J., Rajagopalan J. (ASU), Wang Y.</div>
-            <div class="pub-venue">Manuscript in preparation · Target submission 2026</div>
+            <span class="pub-title">Programming Martensitic Transformation and Mechanical Response in NiTi Shape Memory Alloys through One-Dimensional Compositional Modulations</span>
+            <div class="pub-authors"><b>Chen Z.</b>, Sriram H., Yu T., Feng L., Zhu J., Rajagopalan J. (ASU), Wang Y.</div>
+            <div class="pub-venue">Preprint · 2026 · Under review</div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.2139/ssrn.7302838" target="_blank" rel="noopener">Preprint DOI</a>
+            </div>
           </div>
         </li>
-        -->
 
         <li>
           <div>
@@ -393,8 +387,6 @@
           <span class="conf-kind">Oral</span>
           <span class="conf-title">Regulating Martensitic Transformation in NiTi via Microstructural Engineering.</span>
         </li>
-        <!-- HIDDEN UNTIL PUBLICATION — 1D concentration modulation talks.
-
         <li class="conf-item">
           <span class="conf-date">Mar 2025</span>
           <span class="conf-venue">TMS Annual Meeting</span>
@@ -407,7 +399,6 @@
           <span class="conf-kind">Oral</span>
           <span class="conf-title">Fine-tuning Superelastic Behavior of NiTi SMAs via Nanoscale Concentration Modulations.</span>
         </li>
-        -->
       </ul>
 
       <h3 class="subhead with-gap">Methods</h3>
