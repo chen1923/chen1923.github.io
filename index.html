@@ -69,10 +69,10 @@
         <div class="hero-text">
           <h1>Zexu Chen</h1>
           <p class="hero-tag">
-            I build <em>physics-grounded</em> and <em>data-driven</em> models of how
-            NiTi-based metals remember their shape — coupling phase-field theory,
-            GPU-accelerated computing, and Gaussian-process surrogates for inverse
-            alloy design. <span class="accent">/ Columbus, OH</span>
+            I model how NiTi-based metals remember their shape. The work runs on
+            <em>phase-field</em> theory and GPU computing, with <em>Gaussian-process</em>
+            surrogates that turn the simulations into alloy design.
+            <span class="accent">/ Columbus, OH</span>
           </p>
         </div>
         <div class="hero-photo">
@@ -92,16 +92,17 @@
             (expected May 2028), working on <em>phase-field</em> modeling of NiTi-based shape memory alloys.
           </p>
           <p>
-            My research spans three coupled layers: GPU-accelerated phase-field solvers
-            written in C / OpenACC and run on the Ohio Supercomputer Center; microstructural
-            engineering of NiTi via 1D nanoscale concentration modulations; and
-            <em>machine-learning surrogates</em> that link composition and microstructure to
-            mechanical response — closing the loop for inverse alloy design.
+            The work has three layers that feed each other. I write the phase-field solvers
+            in C with OpenACC and run them on GPUs at the Ohio Supercomputer Center. I use
+            them to engineer NiTi microstructure through 1D nanoscale concentration
+            modulations. And I fit <em>machine-learning surrogates</em> that link composition
+            and microstructure to mechanical response, which is what makes inverse design
+            practical.
           </p>
           <p>
-            I'm seeking a <strong>Summer 2027 R&amp;D internship</strong> in
-            materials informatics, computational alloy design, or ML for materials — with a
-            longer-term interest in national-laboratory research roles.
+            I'm looking for a <strong>Summer 2027 R&amp;D internship</strong> in materials
+            informatics, computational alloy design, or ML for materials. Longer term, I'd
+            like to do research at a national laboratory.
           </p>
         </div>
       </div>
@@ -155,12 +156,13 @@
           <div class="project-num">01 / Lead — Preprint · Under review</div>
           <h3>Programming Mechanical Response of NiTi SMA via 1D Nanoscale Concentration Modulations</h3>
           <p>
-            3D phase-field simulations of nanoscale composition waves engineered to produce
-            a near-linear superelastic stress–strain response in NiTi — targeting biomedical
-            and actuator applications. Habit-plane and twinning-plane formation in B19′
-            martensite analyzed through martensite crystallography and Khachaturyan
+            3D phase-field simulations of nanoscale composition waves, tuned so that NiTi
+            gives the near-linear superelastic stress–strain response that biomedical
+            devices and actuators need. I analyze habit-plane and twinning-plane formation in
+            B19′ martensite using martensite crystallography and Khachaturyan
             microelasticity. A <em>Gaussian Process Regression</em> surrogate maps modulation
-            parameters to stress–strain behavior, enabling accelerated inverse design.
+            parameters onto stress–strain behavior, which lets the design problem be run
+            in reverse.
           </p>
           <div class="project-tags">
             <span class="tag">Phase-field</span>
@@ -178,11 +180,11 @@
           <div class="project-num">02 / Published 2026</div>
           <h3>Soft &amp; Hard Confinement Effects on Martensitic Transformation in NiTi</h3>
           <p>
-            Phase-field study of how amorphous-matrix (soft) and crystalline-matrix (hard)
-            confinement modulate the B2 → B19′ transformation in NiTi shape memory alloys.
-            Demonstrated linear superelastic response routes via amorphous–crystalline
-            composite microstructures. Published in <em>Shape Memory and Superelasticity</em>
-            (2026) with Sriram, Feng &amp; Wang.
+            Phase-field study of how confinement by an amorphous matrix (soft) or a
+            crystalline one (hard) changes the B2 → B19′ transformation in NiTi shape
+            memory alloys. We show that amorphous–crystalline composite microstructures
+            are one route to a linear superelastic response. Published in
+            <em>Shape Memory and Superelasticity</em> (2026) with Sriram, Feng &amp; Wang.
           </p>
           <div class="project-tags">
             <span class="tag">Multi-phase field</span>
@@ -199,10 +201,10 @@
           <h3>Taming Martensitic Transformation via Precipitate Engineering</h3>
           <p>
             Coupled diffusional and non-diffusional phase-field evolution with an explicit
-            nucleation algorithm, used to model precipitation in NiTi and the concentration
-            field it leaves behind. Explores the resulting effect on transformation behavior
+            nucleation algorithm, used to follow precipitation in NiTi and the concentration
+            field it leaves behind, and to ask what that field does to transformation behavior
             and mechanical stability.
-            Implemented in C with OpenACC and run as large parametric SLURM campaigns on OSC.
+            Written in C with OpenACC and run as large parametric SLURM campaigns on OSC.
           </p>
           <div class="project-tags">
             <span class="tag">Precipitation</span>
@@ -219,12 +221,12 @@
           <div class="project-num">04</div>
           <h3>Predicting Superconducting λ and T<sub>c</sub> from Eliashberg Spectra</h3>
           <p>
-            XGBoost and Gaussian Process Regression pipeline predicting λ and T<sub>c</sub>
-            from α²F(ω) Eliashberg spectral functions, trained on a public dataset of
-            DFT-validated superconductors. Physics-informed, frequency-weighted spectral
-            features are aligned with the Eliashberg integral, with kernels chosen to handle
-            spectral discontinuities. Benchmarks weigh feature resolution against
-            generalization.
+            An XGBoost and Gaussian Process Regression pipeline that predicts λ and
+            T<sub>c</sub> from α²F(ω) Eliashberg spectral functions, trained on
+            a public dataset of DFT-validated superconductors. The spectral features are
+            frequency-weighted to follow the Eliashberg integral rather than treating the
+            spectrum as a generic vector, and the kernels are chosen to cope with its
+            discontinuities. Benchmarks trade feature resolution off against generalization.
           </p>
           <div class="project-tags">
             <span class="tag">XGBoost · GPR</span>
@@ -241,12 +243,12 @@
           <div class="project-num">05 / Concept — In Progress</div>
           <h3>Agentic AI &amp; MCP for Semantic Microstructure Analysis</h3>
           <p>
-            A researcher-in-the-loop pipeline where a multimodal LLM agent, connected through a
-            <em>Model Context Protocol</em> (MCP) server, turns high-level semantic goals into
-            concrete operations — segmentation, feature extraction, and filtering — over
-            simulation and microscopy data. The agent plans, translates intent into logical
-            rules and parameters, validates results against the original goal, and iteratively
-            refines, returning visual reports and segmentation maps.
+            A researcher-in-the-loop pipeline in which a multimodal LLM agent, reached
+            through a <em>Model Context Protocol</em> (MCP) server, turns a stated goal into
+            the operations that answer it: segmentation, feature extraction and filtering over
+            simulation and microscopy data. The agent works out the rules and parameters
+            itself, checks the result against what was asked for, revises when it misses, and
+            hands back visual reports and segmentation maps.
           </p>
           <div class="project-tags">
             <span class="tag">MLLM agent</span>
